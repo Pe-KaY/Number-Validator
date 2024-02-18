@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Telephone Number Validator</title>
+  </head>
+  <body>
+    <p class="startertext">Telephone Number Validator</p>
+    <div id="container">
+      <div id="circle"></div>
+      <div id="phonecontainer">
+        <p class="enternum">Enter a Phone Number:</p>
+        <input
+          type="text"
+          id="user-input"
+          maxlength="10"
+          placeholder="10 digit without space"
+        />
+        <div id="results-div"></div>
+        <div id="holder">
+          <div id="holdertitle"><h3>Valid Numbers</h3></div>
+        </div>
+      </div>
+      <div id="btncontainer">
+        <button type="button" id="check-btn">check</button>
+        <button type="button" id="clear-btn">clear</button>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
