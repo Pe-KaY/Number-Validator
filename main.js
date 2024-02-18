@@ -22,9 +22,12 @@ function telephoneCheck(input) {
   //test string against each regex
   result.innerHTML = tester(num) ? validString : invalidString
   userInput.value = ""
-  holder.innerHTML += `<p style="margin-top: 1rem">${networkVerify(
+  if(tester(num)){
+    holder.innerHTML += `<p style="margin-top: 1rem">${networkVerify(
     num
   )}:  ${num}</p>`
+  }
+
 }
 
 const networkVerify = (num) => {
