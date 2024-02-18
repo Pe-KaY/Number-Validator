@@ -17,8 +17,8 @@ function telephoneCheck(input) {
   //test string against each regex
   const tester = (str) => arr.some((regex) => str.match(regex))
   //HTML strings
-  const validString = `<p class="resulttext">Valid GH number:  ${num}</p>`
-  const invalidString = `<p class="resulttext">Invalid GH number:  ${num}</p>`
+  const validString = `<p class="resulttext">Valid GH Number:  ${num}</p>`
+  const invalidString = `<p class="resulttext">Invalid GH Number:  ${num}</p>`
   //test string against each regex
   result.innerHTML = tester(num) ? validString : invalidString
   userInput.value = ""
