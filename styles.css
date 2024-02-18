@@ -124,7 +124,7 @@ input::placeholder {
   font-size: 1rem;
   color: black;
 }
-@media (max-width: 300px) {
+@media (max-width: 391px) {
   #container {
     width: 100vw;
     height: 100vh;
