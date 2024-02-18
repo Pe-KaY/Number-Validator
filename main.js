@@ -17,17 +17,16 @@ function telephoneCheck(input) {
   //test string against each regex
   const tester = (str) => arr.some((regex) => str.match(regex))
   //HTML strings
-  const validString = `<p class="resulttext">Valid GH Number:  ${num}</p>`
-  const invalidString = `<p class="resulttext">Invalid GH Number:  ${num}</p>`
+  const validString = `<p class="resulttext">Valid GH number:  ${num}</p>`
+  const invalidString = `<p class="resulttext">Invalid GH number:  ${num}</p>`
   //test string against each regex
   result.innerHTML = tester(num) ? validString : invalidString
   userInput.value = ""
-  if(tester(num)){
+  if (tester(num)) {
     holder.innerHTML += `<p style="margin-top: 1rem">${networkVerify(
-    num
-  )}:  ${num}</p>`
+      num
+    )}:  ${num}</p>`
   }
-
 }
 
 const networkVerify = (num) => {
@@ -44,20 +43,20 @@ const networkVerify = (num) => {
   }
 }
 
-const checker = () => {
-  if (userInput.value == "" || userInput.value.split("").length < 10) {
-    alert("Please provide a phone number")
-    return
-  }
-  telephoneCheck(userInput.value)
-}
-
 const clear = () => {
   result.textContent = ""
   Array.from(document.querySelectorAll("#holder p")).forEach((p) => p.remove())
 }
 
 const lauchnumberchecker = () => {
+  if (
+    userInput.value == "" ||
+    userInput.value.split("").length < 10 ||
+    isNaN(userInput.value)
+  ) {
+    result.innerHTML = `<p style="color: black;"class="animtext">Please provide a valid GH number</p>`
+    return
+  }
   result.innerHTML = `<p class="animtext">Api Connected</p>`
   setTimeout(() => {
     result.innerHTML = `<p class="animtext">Starting Validation</p>`
@@ -82,7 +81,7 @@ const lauchnumberchecker = () => {
   }, 3800)
   setTimeout(() => {
     result.innerHTML = ""
-    checker()
+    telephoneCheck(userInput.value)
   }, 5000)
 }
 //functions end here
