@@ -32,7 +32,7 @@ function telephoneCheck(input) {
 const networkVerify = (num) => {
   const numstr = num.toString()
   const operators = {
-    vodafone: "0",
+    Telecel: "0",
     Mtn: "459",
     AirtelTigo: "67",
   }
